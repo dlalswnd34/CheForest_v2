@@ -49,7 +49,7 @@ sudo docker start oracle-xe
 cd /home/ubuntu
 nohup sudo java -jar cheforest.war > cheforest.log 2>&1 &
 tail -f cheforest.log
-
+```
 
 ---
 
