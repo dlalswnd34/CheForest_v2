@@ -1,0 +1,723 @@
+/* Q&A 페이지 스타일 */
+
+.qna-page .container {
+    max-width: 1216px;   /* 원하는 폭 */
+    margin: 0 auto;      /* ✅ 가운데 정렬 */
+    padding: 0 16px;
+}
+
+/* 페이지 헤더 */
+.qna-header {
+    background: linear-gradient(to right, #ec4899, #f97316);
+    color: white;
+    padding: 4rem 0;
+}
+
+.qna-header-content {
+    text-align: center;
+}
+
+.qna-header-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.qna-header-icon .icon {
+    width: 2rem;
+    height: 2rem;
+    margin-right: 0.75rem;
+}
+
+.qna-header-icon h1 {
+    font-size: 2.25rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.qna-header-description {
+    font-size: 1.25rem;
+    opacity: 0.9;
+    margin: 2rem 0;
+}
+
+.qna-header-features {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    font-size: 0.875rem;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.feature-item .icon {
+    width: 1.25rem;
+    height: 1.25rem;
+}
+
+/* 빠른 검색 */
+.qna-search {
+    padding: 2rem 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    background: white;
+}
+
+.search-wrapper {
+    max-width: 32rem;
+    margin: 0 auto;
+}
+
+.search-input-wrapper {
+    position: relative;
+}
+
+.search-icon {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1.25rem;
+    height: 1.25rem;
+    color: #6b7280;
+}
+
+.search-input {
+    width: 100%;
+    padding: 0.75rem 1rem 0.75rem 3rem;
+    font-size: 1.125rem;
+    border: 2px solid #e5e7eb;
+    border-radius: 9999px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.search-input:focus {
+    border-color: #f97316;
+}
+
+/* 컨텐츠 레이아웃 */
+.qna-content {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: 2rem;
+    padding: 3rem 0;
+}
+
+@media (max-width: 1024px) {
+    .qna-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* 사이드바 */
+.qna-sidebar {
+    position: sticky;
+    top: 2rem;
+    align-self: start;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.sidebar-card {
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+}
+
+.brand-card {
+    background: linear-gradient(to bottom right, #fef7f7, #fef3f0);
+    border-color: #fed7aa;
+}
+
+.community-card {
+    background: #f0fdf4;
+    border-color: #bbf7d0;
+}
+
+.card-header {
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.card-header h3 {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.brand-card .card-header h3 {
+    color: #c2410c;
+}
+
+.community-card .card-header h3 {
+    color: #166534;
+}
+
+.card-header .icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    margin-right: 0.5rem;
+}
+
+.card-content {
+    padding: 1rem 1.5rem;
+}
+
+/* CheForest 브랜드 카드 */
+.brand-description {
+    color: #ea580c;
+    line-height: 1.6;
+    margin-bottom: 0.75rem;
+}
+
+.brand-features {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.75rem;
+    color: #f97316;
+}
+
+.brand-feature-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    background: none;
+    border: none;
+    color: #f97316;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.brand-feature-btn:hover {
+    color: #ea580c;
+}
+
+.brand-feature-btn .icon {
+    width: 0.75rem;
+    height: 0.75rem;
+}
+
+/* 연락처 정보 */
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+    font-size: 0.875rem;
+}
+
+.contact-item:last-child {
+    margin-bottom: 0;
+}
+
+.contact-item .icon {
+    width: 1rem;
+    height: 1rem;
+    color: #6b7280;
+}
+
+/* 커뮤니티 현황 */
+.community-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+}
+
+.stat-item {
+    text-align: center;
+    padding: 0.75rem;
+    background: white;
+    border: 1px solid #bbf7d0;
+    border-radius: 0.5rem;
+}
+
+.stat-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.25rem;
+}
+
+.stat-icon .icon {
+    width: 1rem;
+    height: 1rem;
+    color: #059669;
+}
+
+.stat-number {
+    font-weight: 600;
+    color: #166534;
+}
+
+.stat-label {
+    font-size: 0.75rem;
+    color: #059669;
+}
+
+.community-message {
+    font-size: 0.75rem;
+    color: #059669;
+    text-align: center;
+    background: white;
+    padding: 0.5rem;
+    border: 1px solid #bbf7d0;
+    border-radius: 0.5rem;
+}
+
+/* 메인 컨텐츠 */
+.qna-main {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* 탭 네비게이션 */
+.tab-navigation {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: #f3f4f6;
+    border-radius: 0.5rem;
+    padding: 0.25rem;
+}
+
+.tab-btn {
+    padding: 0.75rem 1rem;
+    background: none;
+    border: none;
+    border-radius: 0.375rem;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.2s;
+    color: #6b7280;
+}
+
+.tab-btn.active {
+    background: white;
+    color: #111827;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+}
+
+/* 탭 컨텐츠 */
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* 메인 카드 */
+.main-card {
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+}
+
+.main-card .card-header {
+    padding: 1.5rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.main-card .card-header h2 {
+    display: flex;
+    align-items: center;
+    margin: 0 0 0.5rem 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.main-card .card-header .icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-right: 0.5rem;
+    color: #f97316;
+}
+
+.main-card .card-content {
+    padding: 1.5rem;
+}
+
+/* FAQ 헤더 */
+.faq-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.faq-count {
+    color: #6b7280;
+    font-weight: normal;
+}
+
+.search-badge {
+    background: #f3f4f6;
+    color: #6b7280;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+}
+
+/* FAQ 리스트 */
+.faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.faq-item {
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+.faq-question {
+    display: flex;
+    align-items: flex-start;
+    padding: 1rem;
+    cursor: pointer;
+    background: white;
+    transition: background-color 0.2s;
+    text-align: left;
+    width: 100%;
+    border: none;
+}
+
+.faq-question:hover {
+    background: #f9fafb;
+}
+
+.question-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    color: #f97316;
+    margin-right: 0.75rem;
+    margin-top: 0.125rem;
+    flex-shrink: 0;
+}
+
+.question-text {
+    flex: 1;
+    font-weight: 500;
+}
+
+.chevron-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    color: #6b7280;
+    transition: transform 0.2s;
+    flex-shrink: 0;
+}
+
+.faq-item.open .chevron-icon {
+    transform: rotate(180deg);
+}
+
+.faq-answer {
+    display: none;
+    padding: 0 1rem 1.5rem 1rem;
+}
+
+.faq-item.open .faq-answer {
+    display: block;
+}
+
+.answer-content {
+    margin-left: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.answer-content p {
+    color: #6b7280;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.answer-separator {
+    height: 1px;
+    background: #e5e7eb;
+}
+
+.answer-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.helpful-text {
+    font-size: 0.875rem;
+    color: #6b7280;
+}
+
+.helpful-buttons {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.helpful-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.25rem 0.5rem;
+    background: none;
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    font-size: 0.875rem;
+    transition: all 0.2s;
+}
+
+.helpful-yes {
+    color: #059669;
+}
+
+.helpful-yes:hover {
+    color: #047857;
+    background: #ecfdf5;
+}
+
+.helpful-no {
+    color: #dc2626;
+}
+
+.helpful-no:hover {
+    color: #b91c1c;
+    background: #fef2f2;
+}
+
+.helpful-btn .icon {
+    width: 1rem;
+    height: 1rem;
+}
+
+/* 검색 결과 없음 */
+.no-results {
+    text-align: center;
+    padding: 3rem 0;
+}
+
+.no-results-content {
+    max-width: 24rem;
+    margin: 0 auto;
+}
+
+.no-results-icon {
+    width: 3rem;
+    height: 3rem;
+    color: #6b7280;
+    margin: 0 auto 1rem;
+}
+
+.no-results h3 {
+    font-weight: 500;
+    margin: 0 0 0.5rem 0;
+}
+
+.no-results p {
+    color: #6b7280;
+    margin: 0 0 1rem 0;
+}
+
+.btn-reset {
+    padding: 0.5rem 1rem;
+    background: none;
+    border: 1px solid #f97316;
+    color: #f97316;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-reset:hover {
+    background: #fef3f0;
+}
+
+/* 문의하기 폼 */
+.contact-description {
+    color: #6b7280;
+    margin: 0;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    font-weight: 500;
+    color: #111827;
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 0.75rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.375rem;
+    font-size: 1rem;
+    transition: border-color 0.2s;
+    outline: none;
+    resize: vertical;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #f97316;
+    box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.1);
+}
+
+.form-group textarea {
+    min-height: 18.75rem;
+    font-family: 'Gowun Dodum', sans-serif;
+}
+
+/* 폼 안내사항 */
+.form-notice {
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
+    border-radius: 0.5rem;
+    padding: 1rem;
+}
+
+.notice-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+}
+
+.notice-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    color: #3b82f6;
+    margin-top: 0.125rem;
+    flex-shrink: 0;
+}
+
+.notice-text {
+    font-size: 0.875rem;
+}
+
+.notice-title {
+    font-weight: 500;
+    color: #1e40af;
+    margin: 0 0 0.25rem 0;
+}
+
+.notice-list {
+    color: #2563eb;
+    margin: 0;
+    padding-left: 0;
+    list-style: none;
+}
+
+.notice-list li {
+    margin-bottom: 0.25rem;
+}
+
+/* 제출 버튼 */
+.btn-submit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    width: 100%;
+    padding: 0.75rem 1rem;
+    background: #f97316;
+    color: white;
+    border: none;
+    border-radius: 0.375rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-submit:hover:not(:disabled) {
+    background: linear-gradient(to right, #ec4899, #f97316);
+}
+
+.btn-submit:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.btn-submit .icon {
+    width: 1rem;
+    height: 1rem;
+}
+.container{
+    width: 100%;
+    max-width: 1200px; /* 최대 가로 크기, 필요에 따라 조정 가능 */
+    margin: 0 auto;     /* 좌우 가운데 정렬 */
+    padding: 0 20px;    /* 양쪽 여백을 줘서 너무 붙지 않게 */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* 반응형 */
+@media (max-width: 768px) {
+    .qna-header {
+        padding: 2rem 0;
+    }
+
+    .qna-header-icon h1 {
+        font-size: 1.875rem;
+    }
+
+    .qna-header-description {
+        font-size: 1.125rem;
+    }
+
+    .qna-header-features {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .qna-content {
+        padding: 1.5rem 0;
+        gap: 1.5rem;
+    }
+
+    .qna-sidebar {
+        position: static;
+    }
+
+    .community-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .answer-content {
+        margin-left: 0;
+    }
+}

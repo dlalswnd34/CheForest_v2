@@ -1,0 +1,277 @@
+/* ========================================================== */
+/* 1. 기본 구조 및 레이아웃 */
+/* ========================================================== */
+
+#chatBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: linear-gradient(to right, #ff69ab, #ff7d5e);
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .25);
+    z-index: 9999;
+    color: white;
+    border: none;
+    font-size: 18px;
+
+}
+
+.chat-container {
+    width: 320px;
+    height: 500px;
+    border: 1px solid #bfbfbf;
+    border-radius: 10px;
+
+    /* 🌟 필수: Flexbox 레이아웃을 활성화합니다. 🌟 */
+    /*display: flex;*/
+
+    display: none;
+
+    flex-direction: column;
+    overflow: hidden;
+    background: white;
+
+    /* 🌟 핵심: Fixed로 고정하고 오른쪽 위치 지정 🌟 */
+    position: fixed;
+    bottom: 100px;
+    right: 20px;
+
+    /* ❌ chat-container의 왼쪽 라운딩 관련 불필요한 스타일 제거 (단독으로 띄우므로) ❌ */
+    border-top-left-radius: 10px; /* 원래대로 10px로 복구 */
+    border-bottom-left-radius: 10px; /* 원래대로 10px로 복구 */
+}
+
+.chat-header {
+    /* 헤더 그라데이션 및 고정 */
+    padding: 15px;
+    background-image: linear-gradient(to right, #ff69ab, #ff7d5e);
+    border-bottom: 1px solid #ddd;
+    flex-shrink: 0;
+
+    /* 🌟 추가: Flexbox 설정 */
+    display: flex; /* 내부 요소 수평 정렬 */
+    justify-content: space-between; /* 요소들을 양 끝으로 분산 */
+    align-items: center; /* 수직 중앙 정렬 */
+}
+
+.chat-close-btn {
+    background: none;
+    border: none;
+    color: white; /* 텍스트 색상 흰색 */
+    font-size: 25px;
+    cursor: pointer;
+    padding: 0; /* 기본 패딩 제거 */
+}
+
+.chat-header p {
+    margin: 0;
+    font-size: 1em;
+    color: white;
+}
+
+.chatBox {
+    /* 메시지 스크롤 영역 */
+    flex-grow: 1;
+    padding: 10px;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ========================================================== */
+/* 2. 메시지 행 (Flexbox 정렬의 핵심) */
+/* ========================================================== */
+
+/* 1. 메시지 행 (가로 정렬 Flexbox 기본 설정) */
+.message-row {
+    display: flex;
+    align-items: flex-end; /* 프로필, 버블, 시간을 하단 기준으로 정렬 */
+    margin-bottom: 15px;
+    gap: 8px;
+    max-width: 90%;
+}
+
+/* 2. 상대방 메시지 정렬 (왼쪽) */
+.message-message {
+    justify-content: flex-start;
+    align-self: flex-start;
+}
+
+/* 3. 내가 보낸 메시지 정렬 (오른쪽) */
+.message-message-my {
+    /* 🌟 핵심: margin-left: auto;로 행 전체를 오른쪽으로 밀어냅니다. 🌟 */
+    margin-left: auto;
+
+    justify-content: flex-end;
+    align-self: flex-end;
+
+    /* 🌟 row-reverse 제거: JS에서 버블과 시간을 묶어 하나만 추가하므로, 순서 반전 불필요 🌟 */
+    flex-direction: row;
+    gap: 5px;
+}
+
+
+/* ========================================================== */
+/* 3. 내가 보낸 메시지 전용 래퍼 스타일 */
+/* ========================================================== */
+
+/* 🌟 내가 보낸 메시지: 시간과 버블을 묶어 수평으로 정렬하는 래퍼 🌟 */
+.my-bubble-info-wrapper {
+    display: flex;
+    flex-direction: row; /* 시간과 말풍선을 수평으로 나란히 배치 */
+    align-items: flex-end; /* 시간과 말풍선을 하단(아래쪽) 기준으로 정렬 */
+    gap: 5px; /* 시간과 말풍선 사이 간격 */
+}
+
+/* ========================================================== */
+/* 4. 말풍선 및 닉네임 */
+/* ========================================================== */
+
+/* 4. 말풍선 및 닉네임 래퍼 (수직 정렬 Flexbox) */
+.message-content-wrapper {
+    display: flex;
+    flex-direction: column; /* 닉네임, 말풍선을 세로로 쌓음 */
+    align-items: flex-start; /* 기본 정렬: 왼쪽 (상대방) */
+    max-width: 80%;
+}
+
+/* 5. 내가 보낸 메시지의 래퍼는 오른쪽 정렬 */
+.message-message-my .message-content-wrapper {
+    /* 닉네임을 제거했더라도, 버블 자체가 오른쪽으로 정렬되도록 함 */
+    align-items: flex-end;
+}
+
+/* 6. 닉네임 스타일 (상대방 메시지 위에만 표시됨) */
+.message-sender-name {
+    font-size: 0.85em;
+    color: #666;
+    margin-bottom: 4px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* 7. 말풍선 버블 기본 스타일 */
+.message-bubble {
+    padding: 10px 15px;
+    border-radius: 20px;
+    line-height: 1.4;
+    word-wrap: break-word;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+/* 8. 상대방 말풍선 스타일 */
+.message {
+    background-color: #fff;
+    color: #000;
+    border-top-left-radius: 5px; /* 꼬리 모양 */
+}
+
+/* 9. 내 말풍선 스타일 (핑크 그라데이션) */
+.message-my {
+    background-image: linear-gradient(to right, #ff69ab, #ff7d5e);
+    color: white;
+    border-top-right-radius: 5px; /* 꼬리 모양 */
+}
+
+/* 10. 전송 시간 스타일 */
+.message-time {
+    font-size: 0.75em;
+    color: #999;
+    align-self: flex-end; /* 버블 아래쪽과 수직 정렬 */
+}
+
+/* ========================================================== */
+/* 5. 입력창 스타일 */
+/* ========================================================== */
+
+.chat-input-area {
+    padding: 10px;
+    border-top: 1px solid #ddd;
+    display: flex;
+    flex-shrink: 0;
+}
+
+.chat-input-area input {
+    flex-grow: 1;
+    padding: 8px;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+.chat-send-btn {
+    border: none;
+    background-image: linear-gradient(to right, #ff69ab, #ff7d5e);
+    color: #fff;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* 3. emoji-panel: Fixed로 고정하고 채팅창 옆에 위치 */
+.emoji-panel {
+    width: 300px;
+    height: 500px;
+    background: #f7f7f7;
+    border: 1px solid #bfbfbf;
+    border-radius: 10px; /* 패널도 둥글게 */
+    z-index: 998; /* 채팅창(z-index: 999)보다 아래에 두거나 같게 둠 */
+
+    /* 🌟 핵심: Fixed로 고정하고 채팅창을 기준으로 위치 계산 🌟 */
+    position: fixed;
+    bottom: 100px; /* 채팅창과 동일한 높이 */
+
+    /* 🌟 계산: 패널의 오른쪽 끝 = (채팅창의 right 20px) + (채팅창의 width 320px) + 간격(10px) = 350px 🌟 */
+    right: 340px;
+
+    overflow-y: scroll;
+    display: none; /* 초기 숨김 */
+
+    /* 내부 정렬 유지 */
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 5px;
+    padding: 10px;
+}
+
+/* 4. 이모티콘 토글 버튼 스타일 */
+.emoji-toggle-btn {
+    border: none;
+    background: transparent;
+    color: #ff69ab; /* 핑크색 계열로 */
+    font-size: 20px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-right: 5px; /* 입력창과 약간의 간격 */
+    flex-shrink: 0; /* 크기 유지 */
+}
+
+/* 5. 이모티콘 버튼 내 이미지 사이즈 조절 (기존 loadEmojis() 함수에서 사용됨) */
+.emoji-panel button img {
+    width: 50px; /* 패널 안의 이모티콘 크기 조정 */
+    height: 50px;
+}
+
+.emoji-tier-header {
+    width: 100%; /* 너비를 100%로 설정하여 한 줄 전체를 차지하게 함 */
+    text-align: center;
+    color: #444;
+    font-size: 1rem;
+    padding: 8px 0 4px 0; /* 제목 위아래 여백 */
+    margin-top: 10px; /* 이전 등급과의 구분 여백 */
+    border-bottom: 1px dashed #ddd; /* 구분선 */
+}

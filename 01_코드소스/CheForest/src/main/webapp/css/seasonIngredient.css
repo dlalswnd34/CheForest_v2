@@ -1,0 +1,256 @@
+/* === 계절별 컬러셋 변수 정의 === */
+:root {
+    /* 기본 = 봄 */
+    --grad-from: #84edad;
+    --grad-to:   #f6a5cc;
+    --bg-from:   #f0fdf4;
+    --bg-to: #fffaff;
+}
+
+body.season-spring {
+    --grad-from: #f6a5cc;
+    --grad-to:   #f6a5cc;
+    --bg-from:   #f0fdf4;
+    --bg-to:     #fce7f3;
+}
+
+body.season-summer {
+    --grad-from: #55b323;
+    --grad-to: #59a376;
+    --bg-from: #f1fdf9;
+    --bg-to: #eefaf3;
+}
+
+body.season-autumn {
+    --grad-from: #f97316;
+    --grad-to:   #dc2626;
+    --bg-from:   #fff7ed;
+    --bg-to:     #fecaca;
+}
+
+body.season-winter {
+    --grad-from: #3b82f6;
+    --grad-to: #926cbc;
+    --bg-from:   #eff6ff;
+    --bg-to:     #e0e7ff;
+}
+
+/* 배경 */
+body,
+.ingredients-container {
+    background: linear-gradient(135deg, var(--bg-from), var(--bg-to));
+    transition: background 0.7s ease;
+}
+
+/* === 공통 스타일 === */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Gowun Dodum', sans-serif; font-size: 14px; line-height: 1.6; color: #374151; min-height: 100vh; }
+
+/* 헤더 */
+.header { background: white; border-bottom: 1px solid rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 100; }
+.header-container { max-width: 1280px; margin: 0 auto; padding: 0 1rem; }
+.header-content { display: flex; align-items: center; justify-content: space-between; height: 4rem; }
+.logo a { font-size: 1.5rem; font-weight: 600; background: linear-gradient(to right, var(--grad-from), var(--grad-to));
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; text-decoration: none; }
+.nav { display: flex; gap: 2rem; }
+.nav a { text-decoration: none; color: #374151; font-weight: 500; transition: color 0.2s; }
+.nav a:hover, .nav a.active { color: var(--grad-to); }
+.header-actions { display: flex; gap: 1rem; }
+.search-btn, .login-btn { padding: 0.5rem 1rem; border: 1px solid #d1d5db; background: white; border-radius: 0.375rem; cursor: pointer; transition: all 0.2s; }
+.login-btn { background: var(--grad-to); color: white; border-color: var(--grad-to); }
+.login-btn:hover { background: linear-gradient(to right, var(--grad-from), var(--grad-to)); }
+
+/* 메인 */
+.ingredients-content { max-width: 78rem; margin: 0 auto; padding: 2rem 1rem; }
+
+/* 페이지 헤더 */
+.page-header { text-align: center; margin-bottom: 3rem; }
+.header-main { display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; }
+.season-icon { font-size: 3.75rem; margin-right: 1rem; }
+.page-title { font-size: 2.5rem; font-weight: 900; background: linear-gradient(to right, var(--grad-from), var(--grad-to));
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.page-description { font-size: 1.125rem; color: #6b7280; margin-bottom: 1rem; }
+.ingredients-count { display: inline-block; padding: 0.5rem 1rem; background: linear-gradient(to right, var(--grad-from), var(--grad-to));
+    color: white; border-radius: 0.375rem; font-weight: 600; }
+
+/* 탭 */
+.season-tabs { display: flex; justify-content: center; margin-bottom: 3rem; }
+.tabs-wrapper { background: rgba(255,255,255,0.8); backdrop-filter: blur(10px); border-radius: 9999px; padding: 0.5rem;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1); border: 1px solid rgba(255,255,255,0.3); }
+.tab-list { display: flex; gap: 0.25rem; }
+.tab-button { display: flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.5rem; border: none; background: none;
+    border-radius: 9999px; cursor: pointer; font-family: inherit; font-weight: 600; color: #6b7280; transition: all 0.3s ease; }
+.tab-button:hover { background: rgba(255,255,255,0.5); transform: scale(1.02); }
+.tab-button.active { background: linear-gradient(to right, var(--grad-from), var(--grad-to)); color: #fff; box-shadow: 0 4px 15px rgba(0,0,0,0.2); transform: scale(1.05); }
+.tab-icon { font-size: 1.125rem; }
+.tab-text { font-size: 1rem; }
+
+/* 그리드 */
+.ingredients-grid { row-gap: 36px; display: grid; grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr)); gap: 1.5rem; margin-bottom: 4rem; }
+
+/* 카드 */
+.ingredient-card { display: flex; flex-direction: column; height: 100%; background: rgba(255,255,255,0.8); backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.5); border-radius: 0.75rem; overflow: hidden; transition: all 0.5s ease; position: relative; }
+.ingredient-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.15); background: rgba(255,255,255,0.9); }
+.card-image { position: relative; aspect-ratio: 4/3; overflow: hidden; }
+.ingredient-img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;     object-fit: contain;
+    background: #fff;}
+.ingredient-card:hover .ingredient-img { transform: scale(1.1); }
+.image-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.2), transparent); opacity: 0; transition: opacity 0.3s; }
+.ingredient-card:hover .image-overlay { opacity: 1; }
+
+.season-badge { position: absolute; top: 0.75rem; right: 0.75rem; display: flex; align-items: center; gap: 0.25rem; padding: 0.25rem 0.75rem;
+    background: linear-gradient(to right, var(--grad-from), var(--grad-to)); color: #fff; border-radius: 0.375rem; font-size: 0.875rem; font-weight: 600; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
+.badge-icon { font-size: 0.875rem; }
+
+/* 카드 헤더 */
+.card-header { padding: 1.5rem 1.5rem 0.75rem; }
+.ingredient-title-line { display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.75rem; }
+.ingredient-name { font-size: 1.25rem; font-weight: 900; background: linear-gradient(to right, var(--grad-from), var(--grad-to));
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.status-dot { width: 0.5rem; height: 0.5rem; border-radius: 50%; background: linear-gradient(to right, var(--grad-from), var(--grad-to)); animation: pulse 2s infinite; }
+@keyframes pulse { 0%,100%{opacity:1;} 50%{opacity:0.5;} }
+.ingredient-description { font-size: 0.875rem; color: #6b7280; line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: visible; white-space: normal; }
+
+/* 카드 콘텐츠 */
+.card-content { padding: 0 1.5rem 1.5rem; flex: 1; display: flex; flex-direction: column; justify-content: space-between; gap: 1rem; }
+.peak-season { display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem; background: linear-gradient(to right, rgba(34,197,94,0.1), rgba(236,72,153,0.1)); border-radius: 0.5rem; }
+.clock-icon { width: 1rem; height: 1rem; color: var(--grad-from); }
+.peak-text { font-size: 0.875rem; font-weight: 600; }
+.benefits-section { display: flex; flex-direction: column; gap: 0.5rem; }
+.section-title { font-size: 0.875rem; font-weight: 700; color: var(--grad-from); display: flex; align-items: center; gap: 0.25rem; }
+.benefits-tags { display: flex; flex-wrap: wrap; gap: 0.25rem; }
+.benefit-tag { padding: 0.125rem 0.5rem; background: linear-gradient(to right, rgba(34,197,94,0.1), rgba(236,72,153,0.1)); color: var(--grad-from); border-radius: 0.375rem; font-size: 0.75rem; font-weight: 600; }
+
+/* 액션 버튼 */
+.recipe-btn { width: 100%; margin-top: auto; padding: 0.75rem 1rem; background: linear-gradient(to right, var(--grad-from), var(--grad-to));
+    color: #fff; border: none; border-radius: 0.5rem; font-family: inherit; font-size: 0.875rem; font-weight: 600; cursor: pointer; transition: all 0.3s ease; }
+.recipe-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 25px rgba(0,0,0,0.2); }
+.recipe-btn:active { transform: translateY(0); }
+
+/* 가이드 */
+.guide-title { font-size: 1.5rem; font-weight: 900; background: linear-gradient(to right, var(--grad-from), var(--grad-to));
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.guide-icon-wrapper { padding: 0.75rem; border-radius: 50%; background: linear-gradient(to right, var(--grad-from), var(--grad-to)); box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
+.guide-item-title { font-weight: 700; color: var(--grad-from); margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem; }
+
+/* 푸터 */
+.footer-logo h3 { background: linear-gradient(to right, var(--grad-from), var(--grad-to));
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+
+/* 반응형 */
+@media (max-width: 768px) {
+    .ingredient-card:hover, .ingredient-card:hover .ingredient-img, .card-image:hover .ingredient-img { transform: none !important; }
+    .header-content { flex-direction: column; height: auto; padding: 1rem 0; gap: 1rem; }
+    .nav { order: 3; width: 100%; justify-content: center; }
+    .header-actions { order: 2; }
+    .ingredients-content { padding: 1rem; }
+    .page-title { font-size: 2rem; }
+    .season-icon { font-size: 3rem; }
+    .tab-button { padding: 0.5rem 1rem; }
+    .tab-text { display: none; }
+    .ingredients-grid { grid-template-columns: 1fr; gap: 1rem; }
+    .guide-grid { grid-template-columns: 1fr; gap: 1rem; }
+    .guide-header { flex-direction: column; text-align: center; gap: 1rem; }
+    .footer-content { flex-direction: column; gap: 1rem; text-align: center; }
+    .footer-links { flex-direction: column; gap: 0.5rem; }
+}
+/* === 가이드 카드 스타일 === */
+.seasonal-guide {
+    margin-top: 4rem;
+}
+
+.guide-card {
+    background: linear-gradient(to right, rgba(34, 197, 94, 0.1), rgba(236, 72, 153, 0.1));
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 0.75rem;
+    backdrop-filter: blur(10px);
+    padding: 2rem;
+}
+
+.guide-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+}
+
+.guide-icon-wrapper {
+    padding: 0.75rem;
+    border-radius: 50%;
+    background: linear-gradient(to right, var(--grad-from), var(--grad-to));
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.guide-main-icon {
+    font-size: 1.5rem;
+}
+
+.guide-title {
+    font-size: 1.5rem;
+    font-weight: 900;
+    background: linear-gradient(to right, var(--grad-from), var(--grad-to));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.guide-subtitle {
+    color: #6b7280;
+}
+
+.guide-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.guide-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    gap: 1.5rem;
+}
+
+.guide-item {
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.5);
+    border: 1px solid rgba(34, 197, 94, 0.2);
+    border-radius: 0.75rem;
+}
+
+.guide-item-title {
+    font-weight: 700;
+    color: var(--grad-from);
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.guide-item-text {
+    font-size: 0.875rem;
+    color: #6b7280;
+    line-height: 1.6;
+}
+
+/* 특별 정보 */
+.special-info {
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 0.75rem;
+}
+
+.special-title {
+    font-weight: 700;
+    color: var(--grad-from);
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.special-text {
+    font-size: 0.875rem;
+    color: #6b7280;
+}

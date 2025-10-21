@@ -1,0 +1,109 @@
+/* CheForest Header Styles */
+/* 헤더 컴포넌트 전용 스타일 */
+
+/* 네비게이션 하단 라인 애니메이션 */
+.nav-underline {
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(to right, #ec4899, #f97316);
+    transform: scaleX(0);
+    transition: transform 0.2s ease;
+}
+
+.nav-item:hover .nav-underline,
+.nav-item.active .nav-underline {
+    transform: scaleX(1);
+}
+
+/* 네비게이션 아이템 호버 효과 */
+.nav-item {
+    transition: color 0.2s ease;
+}
+
+/* 드롭다운 메뉴 애니메이션 */
+.dropdown-menu {
+    transition: all 0.2s ease;
+}
+
+/* 모바일 메뉴 슬라이드 효과 */
+.mobile-menu {
+    transition: all 0.3s ease;
+}
+
+/* 검색바 포커스 효과 */
+.search-input:focus {
+    outline: none;
+    border-color: #f97316;
+    box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.1);
+}
+
+/* 헤더 버튼 호버 효과 */
+.header-btn {
+    transition: all 0.2s ease;
+}
+
+.header-btn:hover {
+    background: linear-gradient(to right, #ec4899, #f97316) !important;
+    color: white !important;
+}
+
+/* 오렌지 아이콘 버튼들의 호버 효과 */
+.header-icon-btn {
+    transition: all 0.2s ease;
+    color: #f97316 !important;
+}
+
+.header-icon-btn:hover {
+    background: linear-gradient(to right, #ec4899, #f97316) !important;
+    color: white !important;
+}
+
+/* 검색 버튼 호버 효과 */
+.search-btn {
+    background-color: #f97316 !important;
+    transition: all 0.2s ease;
+}
+
+.search-btn:hover {
+    background: linear-gradient(to right, #ec4899, #f97316) !important;
+}
+
+/* 로그인 버튼 호버 효과 */
+.login-btn {
+    background-color: #f97316 !important;
+    transition: all 0.2s ease;
+}
+
+.login-btn:hover {
+    background: linear-gradient(to right, #ec4899, #f97316) !important;
+}
+
+/* 모바일 메뉴 버튼 호버 효과 */
+.mobile-menu-btn {
+    transition: all 0.2s ease;
+    color: #f97316 !important;
+}
+
+.mobile-menu-btn:hover {
+    background: linear-gradient(to right, #ec4899, #f97316) !important;
+    color: white !important;
+}
+
+/* 로고 호버 효과 */
+.logo-container {
+    transition: transform 0.2s ease;
+}
+
+.logo-container:hover {
+    transform: scale(1.02);
+}
+.logo-hat{
+    display:block;
+    width:3rem;  /* h-12 보완 */
+    height:3rem; /* w-12 보완 */
+    object-fit:contain;
+    filter:drop-shadow(0 1px 1px rgba(0,0,0,.06));
+}

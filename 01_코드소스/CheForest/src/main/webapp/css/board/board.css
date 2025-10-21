@@ -1,0 +1,399 @@
+/* CheForest Board Page Styles */
+/* 사용자 레시피 게시판 페이지 전용 스타일 */
+
+/* 카테고리 버튼 스타일 */
+.board-category-button {
+    transition: all 0.3s ease;
+}
+
+.board-category-button:hover {
+    background-color: rgba(249, 115, 22, 0.05);
+    border-color: #fed7aa;
+    transform: translateY(-1px);
+}
+
+.board-category-button.active {
+    background: linear-gradient(to right, #ec4899, #f97316);
+    color: white;
+    border-color: transparent;
+    box-shadow: 0 4px 12px rgba(236, 72, 153, 0.3);
+}
+
+.board-category-button.active:hover {
+    transform: translateY(0);
+    box-shadow: 0 6px 16px rgba(236, 72, 153, 0.4);
+}
+
+/* 사용자 레시피 카드 스타일 */
+.board-recipe-card {
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+}
+
+.board-recipe-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.board-recipe-card:hover .board-card-image {
+    transform: scale(1.05);
+}
+
+.board-card-image {
+    transition: transform 0.3s ease;
+}
+
+/* 인기 게시글 카드 특별 스타일 */
+.board-popular-card {
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+}
+
+.board-popular-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.board-popular-card:hover .board-card-image {
+    transform: scale(1.05);
+}
+
+.board-popular-card .board-card-title:hover {
+    color: #ef4444;
+}
+
+.board-recipe-card .board-card-title:hover {
+    color: #a855f7;
+}
+
+/* 순위 배지 - 사용자 게시판용 */
+.board-rank-badge {
+    background: linear-gradient(to right, #ef4444, #f97316);
+    box-shadow: 0 2px 8px rgba(239, 68, 68, 0.4);
+    animation: boardPulse 2s infinite;
+    font-weight: bold;
+    border: 2px solid white;
+}
+
+@keyframes boardPulse {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.9;
+        transform: scale(1.05);
+    }
+}
+
+/* 검색 입력 필드 */
+.board-search-input:focus {
+    outline: none;
+    border-color: #f97316;
+    box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.1);
+}
+
+/* 사용자 레벨 배지 스타일 */
+.level-badge {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.375rem;
+    font-weight: 500;
+}
+
+.level-badge.seed {
+    background-color: #fef3c7;
+    color: #a16207;
+}
+
+.level-badge.root {
+    background-color: #fed7aa;
+    color: #c2410c;
+}
+
+.level-badge.sprout {
+    background-color: #dcfce7;
+    color: #166534;
+}
+
+.level-badge.tree {
+    background-color: #d1fae5;
+    color: #047857;
+}
+
+.level-badge.forest {
+    background-color: #e9d5ff;
+    color: #7c2d12;
+}
+
+/* 프로필 사이드바 스타일 */
+.profile-sidebar {
+    animation: fadeInLeft 0.6s ease-out;
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* 공지사항 카드 스타일 */
+.notice-card {
+    background: linear-gradient(135deg, rgba(249, 115, 22, 0.05) 0%, rgba(236, 72, 153, 0.05) 100%);
+    border: 1px solid rgba(249, 115, 22, 0.2);
+}
+
+.notice-item {
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.notice-item:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+    transform: translateX(4px);
+}
+
+/* 카테고리 배지 개선 스타일 */
+.board-category-badge {
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.board-status-badge {
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* 작성자 정보 스타일 */
+.author-info {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.2s ease;
+}
+
+.author-info:hover {
+    color: #f97316;
+}
+
+.author-avatar {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #ec4899, #f97316);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 0.75rem;
+    font-weight: bold;
+}
+
+/* 통계 아이콘 호버 효과 */
+.board-stat-item {
+    transition: all 0.2s ease;
+}
+
+.board-stat-item:hover {
+    color: #f97316;
+    transform: scale(1.05);
+}
+
+/* 카드 등장 애니메이션 */
+.board-recipe-card {
+    animation: boardFadeInUp 0.6s ease-out;
+}
+
+.board-recipe-card:nth-child(1) { animation-delay: 0.1s; }
+.board-recipe-card:nth-child(2) { animation-delay: 0.2s; }
+.board-recipe-card:nth-child(3) { animation-delay: 0.3s; }
+.board-recipe-card:nth-child(4) { animation-delay: 0.4s; }
+.board-recipe-card:nth-child(5) { animation-delay: 0.5s; }
+.board-recipe-card:nth-child(6) { animation-delay: 0.6s; }
+
+@keyframes boardFadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 좋아요 하트 애니메이션 */
+.heart-like {
+    transition: all 0.2s ease;
+}
+
+.heart-like:hover {
+    color: #ef4444;
+    transform: scale(1.2);
+}
+
+.heart-liked {
+    color: #ef4444;
+    animation: heartBeat 0.6s ease-out;
+}
+
+@keyframes heartBeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+    25% {
+        transform: scale(1.2);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+/* 시간 표시 스타일 */
+.time-ago {
+    color: #6b7280;
+    font-size: 0.875rem;
+}
+
+.time-recent {
+    color: #10b981;
+    font-weight: 500;
+}
+
+/* 반응형 그리드 최적화 */
+@media (max-width: 640px) {
+    .board-recipe-card {
+        margin-bottom: 1rem;
+    }
+    
+    .board-category-button {
+        justify-content: center;
+        text-align: center;
+    }
+    
+    .profile-sidebar {
+        display: none;
+    }
+}
+
+/* 스크롤바 커스터마이징 */
+.board-content::-webkit-scrollbar {
+    width: 4px;
+}
+
+.board-content::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.board-content::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, #ec4899, #f97316);
+    border-radius: 10px;
+}
+
+.board-content::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(to bottom, #db2777, #ea580c);
+}
+
+/* 로딩 스켈레톤 */
+.board-skeleton {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: boardLoading 1.5s infinite;
+}
+
+@keyframes boardLoading {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+/* 카테고리 숫자 배지 */
+.board-category-count {
+    transition: all 0.2s ease;
+}
+
+.board-category-button.active .board-category-count {
+    background-color: rgba(255, 255, 255, 0.2) !important;
+    color: white !important;
+}
+
+/* 난이도 배지 스타일 */
+.difficulty-badge {
+    padding: 0.125rem 0.375rem;
+    border-radius: 0.375rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.difficulty-badge.easy {
+    background-color: #dcfce7;
+    color: #166534;
+}
+
+.difficulty-badge.normal {
+    background-color: #fef3c7;
+    color: #a16207;
+}
+
+.difficulty-badge.hard {
+    background-color: #fecaca;
+    color: #991b1b;
+}
+
+/* 카테고리 배지 스타일 */
+.category-badge {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.375rem;
+    font-weight: 500;
+}
+
+.category-badge.korean {
+    background-color: #fef2f2; 
+    color: #b91c1c; 
+}
+
+.category-badge.western {
+    background-color: #f0fdf4;
+    color: #16a34a; 
+}
+
+.category-badge.chinese {
+    background-color: #fefce8;
+    color: #ca8a04; 
+}
+
+.category-badge.japanese {
+    background-color: #eff6ff;
+    color: #2563eb; 
+}
+
+.category-badge.dessert {
+    background-color: #faf5ff;
+    color: #9333ea; 
+}
+
+.hot-badge {
+    background-color: #ef4444;
+    color: white;
+}
+
+.new-badge {
+    background-color: #10b981;
+    color: white;
+}

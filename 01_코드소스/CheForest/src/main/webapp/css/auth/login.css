@@ -1,0 +1,232 @@
+/* 기본 */
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+    font-family: 'Gowun Dodum', sans-serif;
+    background: linear-gradient(135deg,#fff7ed,#fef3f2);
+}
+
+/* 컨테이너 */
+.login-container {
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    padding:2rem 1rem;
+}
+.login-content { max-width:28rem; width:100%; }
+
+/* 뒤로가기 */
+.back-link { margin-bottom:1rem; }
+.back-link a {
+    font-size:0.85rem;
+    color:#374151;
+    text-decoration:none;
+}
+.back-link a:hover { color:#f97316; }
+
+/* 카드 */
+.login-card {
+    background:white;
+    border-radius:0.75rem;
+    box-shadow:0 20px 25px -5px rgba(0,0,0,0.1);
+    overflow:hidden;
+    transition:all 0.3s;
+    padding-top:1rem;
+}
+.login-card:hover { transform:translateY(-2px); }
+
+/* 헤더 */
+.card-header { text-align:center; padding:1rem 2rem; }
+.card-title {
+    font-size:2rem; font-weight:700;
+    background:linear-gradient(135deg,#ec4899,#f97316);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+.card-description { color:#6b7280; font-size:0.9rem; }
+
+/* 폼 */
+.card-content { padding:0 2rem 1rem; }
+.form-group { margin-bottom:1rem; }
+.form-label { font-size:0.9rem; font-weight:600; margin-bottom:0.25rem; display:block; }
+.input-wrapper { position:relative; }
+.input-icon {
+    position:absolute; left:0.75rem; top:50%; transform:translateY(-50%);
+    width:1rem; height:1rem; color:#9ca3af;
+}
+.form-input {
+    width:100%; padding:0.75rem 0.75rem 0.75rem 2.5rem;
+    border:1px solid #ddd; border-radius:0.375rem;
+}
+.form-input:focus {
+    border-color:#f97316;
+    box-shadow:0 0 0 3px rgba(249,115,22,0.2);
+    outline:none;
+}
+
+/* 버튼 */
+.submit-btn {
+    width:100%; margin-top:0.5rem;
+    padding:0.75rem; background:#f97316; color:white;
+    border:none; border-radius:0.375rem;
+    font-weight:600; cursor:pointer;
+}
+.submit-btn:hover { background:linear-gradient(135deg,#ec4899,#f97316); }
+
+/* 링크 */
+.login-links {
+    text-align:center; margin-top:1rem;
+    display:flex; justify-content:center; gap:1rem; align-items:center;
+    font-size:0.8rem;
+}
+.auth-link { color:#6b7280; text-decoration:none; }
+.auth-link:hover { color:#f97316; }
+.divider-vertical {
+    width:1px; height:12px; background:#ddd;
+}
+
+/* 카드 푸터 */
+.card-footer { padding:1.5rem 2rem 2rem; }
+.mode-switch { text-align:center; margin-bottom:1rem; }
+.switch-text { font-size:0.9rem; color:#6b7280; margin-bottom:0.5rem; }
+.switch-btn {
+    padding:0.5rem 1rem; border:1px solid #f97316;
+    background:white; color:#f97316; border-radius:0.375rem;
+    cursor:pointer;
+}
+.switch-btn:hover { background:rgba(249,115,22,0.05); }
+
+/* 소셜 로그인 */
+.social-divider {
+    display:flex; align-items:center; margin:1rem 0;
+}
+.divider-line { flex:1; height:1px; background:#ddd; }
+.divider-text {
+    font-size:0.8rem; color:#6b7280;
+    margin:0 0.5rem;
+}
+.social-buttons {
+    display:flex; justify-content:center; gap:1rem;
+}
+.social-btn {
+    width:48px; height:48px;
+    border-radius:50%; border:1px solid #e5e7eb;
+    background:white; display:flex; align-items:center; justify-content:center;
+    cursor:pointer; transition:all 0.2s;
+}
+.social-btn svg { width:24px; height:24px; }
+.google-btn:hover { background:#f9fafb; border-color:#d1d5db; }
+.kakao-btn:hover { background:#fff3c7; border-color:#fbbf24; }
+.naver-btn:hover { background:#d1fae5; border-color:#10b981; }
+
+/* 등급 링크 */
+.grade-link { text-align:center; margin-top:1rem; }
+.grade-btn { font-size:0.9rem; color:#6b7280; text-decoration:none; }
+.grade-btn:hover { color:#f97316; }
+
+.modal-overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;            /* 처음엔 안 보이게 */
+    pointer-events: none;  /* 클릭 막기 */
+    transition: opacity 0.3s ease; /* 부드럽게 전환 */
+    z-index: 9999;
+}
+.modal-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal-content {
+    background: #fff;
+    padding: 20px 30px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.modal-content p {
+    margin-bottom: 15px;
+    color: #d32f2f;
+    font-weight: bold;
+}
+
+.modal-content button {
+    padding: 8px 16px;
+    border: none;
+    background-color: #ff6b35;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* ✅ 반응형 추가 */
+@media (max-width: 640px) {
+    .login-container {
+        padding: 1rem;
+    }
+
+    .login-content {
+        max-width: 100%;
+    }
+
+    .login-card {
+        border-radius: 0.5rem;
+        padding-top: 0.5rem;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+
+    .card-header {
+        padding: 0.75rem 1.5rem;
+    }
+
+    .card-title {
+        font-size: 1.5rem;
+    }
+
+    .card-description {
+        font-size: 0.8rem;
+    }
+
+    .card-content {
+        padding: 0 1.5rem 0.75rem;
+    }
+
+    .form-input {
+        font-size: 0.9rem;
+        padding: 0.65rem 0.65rem 0.65rem 2.25rem;
+    }
+
+    .submit-btn {
+        padding: 0.65rem;
+        font-size: 0.95rem;
+    }
+
+    .login-links {
+        flex-direction: column;
+        gap: 0.3rem;
+    }
+
+    .divider-vertical {
+        display: none;
+    }
+
+    .social-buttons {
+        gap: 0.5rem;
+    }
+
+    .social-btn {
+        width: 40px;
+        height: 40px;
+    }
+
+    .grade-link {
+        margin-top: 0.5rem;
+    }
+}

@@ -1,0 +1,992 @@
+/* CheForest 등급 페이지 스타일 */
+
+/* 메인 컨테이너 */
+.grade-main {
+    min-height: 100vh;
+    background: #ffffff;
+}
+
+/* 히어로 섹션 */
+.grade-hero {
+    background: linear-gradient(to right, #ec4899, #f97316);
+    color: white;
+    padding: 64px 0;
+}
+
+.hero-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 16px;
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero-title-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+}
+
+.hero-icon {
+    font-size: 32px;
+    margin-right: 12px;
+}
+
+.hero-title {
+    font-size: 36px;
+    font-weight: 700;
+    background: linear-gradient(to right, #ffffff, #fed7aa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin: 0;
+}
+
+.hero-description {
+    font-size: 20px;
+    opacity: 0.9;
+    margin-bottom: 32px;
+}
+
+.hero-features {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    font-size: 14px;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.feature-icon {
+    font-size: 16px;
+}
+
+/* 메인 컨테이너 */
+.grade-container {
+    max-width: 1216px;
+    margin: 0 auto;
+    padding: 32px 16px;
+}
+
+.grade-layout {
+    display: grid;
+    grid-template-columns: 0.8fr 2.2fr;
+    gap: 32px;
+}
+
+/* 사이드바 */
+.grade-sidebar {
+    position: sticky;
+    top: 32px;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+/* 카드 공통 스타일 */
+.grade-sidebar > div {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* 현재 등급 카드 */
+.current-grade-card {
+    border-color: #fdba74;
+    background: #fff7ed;
+    text-align: center;
+}
+
+.grade-icon-wrapper {
+    margin-bottom: 16px;
+}
+
+.grade-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    color: white;
+    margin: 0 auto;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.seed-grade {
+    background: linear-gradient(to right, #fbbf24, #f97316);
+}
+
+.root-grade {
+    background: linear-gradient(to right, #f97316, #ea580c);
+}
+
+.sprout-grade {
+    background: linear-gradient(to right, #4ade80, #22c55e);
+}
+
+.tree-grade {
+    background: linear-gradient(to right, #10b981, #059669);
+}
+
+.forest-grade {
+    background: linear-gradient(to right, #a855f7, #ec4899);
+}
+
+.grade-name {
+    font-size: 24px;
+    font-weight: 700;
+    color: #ea580c;
+    margin-bottom: 8px;
+}
+
+.grade-description {
+    color: #ea580c;
+    opacity: 0.8;
+    margin-bottom: 24px;
+}
+
+.points-display {
+    margin-bottom: 24px;
+}
+
+.total-points {
+    font-size: 36px;
+    font-weight: 700;
+    color: #ea580c;
+    margin-bottom: 8px;
+}
+
+.points-label {
+    font-size: 14px;
+    color: #6b7280;
+    margin-bottom: 16px;
+}
+
+.points-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    font-size: 14px;
+}
+
+.point-item {
+    text-align: center;
+}
+
+.point-value {
+    font-weight: 600;
+    color: #ea580c;
+    margin-bottom: 4px;
+}
+
+.point-label {
+    font-size: 12px;
+    color: #6b7280;
+}
+
+.grade-range {
+    background: #fff7ed;
+    border: 1px solid #fdba74;
+    padding: 12px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #ea580c;
+    margin-bottom: 16px;
+}
+
+.join-date {
+    font-size: 12px;
+    color: #ea580c;
+    opacity: 0.7;
+}
+
+/* 카드 헤더 공통 */
+.card-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.card-icon {
+    font-size: 20px;
+    margin-right: 8px;
+}
+
+.card-header h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #374151;
+    margin: 0;
+}
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* 다음 등급 진행상황 */
+.progress-info {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.progress-label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    color: #374151;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 12px;
+    background: #e5e7eb;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.progress-bar.small {
+    height: 8px;
+    border-radius: 4px;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(to right, #ec4899, #f97316);
+    border-radius: inherit;
+    transition: width 0.3s ease;
+}
+
+.upgrade-info {
+    background: #dbeafe;
+    padding: 12px;
+    border-radius: 8px;
+}
+
+.upgrade-text {
+    font-size: 14px;
+    font-weight: 600;
+    color: #1d4ed8;
+    margin-bottom: 8px;
+}
+
+.upgrade-methods {
+    font-size: 12px;
+    color: #2563eb;
+    line-height: 1.5;
+}
+
+/* 오늘의 포인트 현황 */
+.today-points-card {
+    border-color: #fdba74;
+    background: #fff7ed;
+}
+
+.today-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.stat-value {
+    font-weight: 600;
+    color: #ea580c;
+}
+
+.stat-label {
+    font-size: 12px;
+    color: #ea580c;
+}
+
+.progress-details {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.progress-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.progress-header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: #374151;
+}
+
+.remaining-points {
+    background: #dcfce7;
+    padding: 8px;
+    border-radius: 6px;
+    font-size: 12px;
+    color: #16a34a;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.remaining-icon {
+    font-size: 12px;
+}
+
+/* 이모티콘 현황 */
+.emoji-status-card {
+    border-color: #e879f9;
+    background: #fdf4ff;
+}
+
+.emoji-count {
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+.emoji-total {
+    font-size: 24px;
+    font-weight: 700;
+    color: #a855f7;
+    margin-bottom: 4px;
+}
+
+.emoji-label {
+    font-size: 14px;
+    color: #9333ea;
+}
+
+.emoji-progress {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.emoji-grade-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+}
+
+.emoji-grade-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.emoji-grade-icon {
+    font-size: 16px;
+}
+
+.emoji-grade-item.unlocked {
+    color: #9333ea;
+}
+
+.emoji-grade-item.locked {
+    color: #9ca3af;
+}
+
+.emoji-count-info {
+    font-weight: 600;
+}
+
+/* 현재 등급 혜택 */
+.benefit-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 14px;
+}
+
+.benefit-icon {
+    font-size: 16px;
+    color: #f97316;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+/* 메인 콘텐츠 */
+.grade-content {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+/* 등급 시스템 안내 */
+.grade-intro {
+    margin-bottom: 8px;
+}
+
+.intro-title {
+    font-size: 24px;
+    font-weight: 600;
+    color: #374151;
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.intro-icon {
+    font-size: 24px;
+    margin-right: 8px;
+    color: #f97316;
+}
+
+.intro-description {
+    color: #6b7280;
+    line-height: 1.6;
+}
+
+/* 등급 목록 */
+.grades-list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.grade-item {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.grade-item.current {
+    border-color: #fdba74;
+    background: #fff7ed;
+    box-shadow: 0 4px 12px rgba(249, 115, 22, 0.15);
+}
+
+.grade-item.achieved {
+    border-color: #bbf7d0;
+    background: #f0fdf4;
+}
+
+.grade-header {
+    margin-bottom: 24px;
+}
+
+.grade-info {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.grade-text {
+    flex: 1;
+}
+
+.grade-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #374151;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.grade-desc {
+    color: #6b7280;
+    margin: 0;
+}
+
+.grade-badge {
+    padding: 4px 12px;
+    border-radius: 16px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.current-badge {
+    background: #f97316;
+    color: white;
+}
+
+.achieved-badge {
+    background: #22c55e;
+    color: white;
+}
+
+/* 등급 상세 정보 */
+.grade-details {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.detail-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #374151;
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.detail-icon {
+    font-size: 16px;
+    margin-right: 8px;
+    color: #f97316;
+}
+
+/* 승급 조건 */
+.condition-box {
+    background: #f9fafb;
+    padding: 16px;
+    border-radius: 12px;
+}
+
+.points-requirement {
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+.points-range {
+    font-size: 24px;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 4px;
+}
+
+.points-unit {
+    font-size: 14px;
+    color: #6b7280;
+}
+
+.earning-methods {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    font-size: 12px;
+}
+
+.method-item {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.method-item.full-width {
+    grid-column: 1 / -1;
+}
+
+.method-icon {
+    font-size: 12px;
+}
+
+/* 등급 혜택 */
+.benefits-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
+}
+
+/* 포인트 획득 가이드 */
+.points-guide {
+    background: #dbeafe;
+    border: 1px solid #93c5fd;
+    border-radius: 16px;
+    padding: 24px;
+}
+
+.guide-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.guide-icon {
+    font-size: 20px;
+    margin-right: 8px;
+    color: #1d4ed8;
+}
+
+.guide-header h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #1d4ed8;
+    margin: 0;
+}
+
+.guide-content {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.guide-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+}
+
+.guide-column {
+    color: #1d4ed8;
+}
+
+.guide-title {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.guide-method-icon {
+    font-size: 16px;
+}
+
+.guide-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.guide-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+}
+
+.guide-bullet {
+    font-size: 12px;
+    color: #f97316;
+    flex-shrink: 0;
+}
+
+/* 제한 시스템 */
+.limit-system {
+    background: white;
+    padding: 16px;
+    border-radius: 12px;
+}
+
+.limit-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #1d4ed8;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.limit-icon {
+    font-size: 16px;
+}
+
+.limit-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    font-size: 12px;
+}
+
+.limit-card {
+    text-align: center;
+    padding: 8px;
+    border-radius: 8px;
+}
+
+.limit-card.daily {
+    background: #fed7aa;
+    color: #ea580c;
+}
+
+.limit-card.posts {
+    background: #dbeafe;
+    color: #2563eb;
+}
+
+.limit-card.comments {
+    background: #e879f9;
+    color: #a855f7;
+}
+
+.limit-card.reset {
+    background: #dcfce7;
+    color: #16a34a;
+}
+
+.limit-label {
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.limit-value {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+/* 구분선 */
+.separator {
+    width: 100%;
+    height: 1px;
+    background: #e5e7eb;
+    margin: 16px 0;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 1024px) {
+    .grade-layout {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .grade-sidebar {
+        position: static;
+        order: 2;
+    }
+
+    .grade-content {
+        order: 1;
+    }
+
+    .hero-features {
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+    }
+
+    .guide-columns {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .limit-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .grade-container {
+        padding: 32px 12px;
+    }
+
+    .grade-sidebar > div {
+        padding: 20px;
+    }
+
+    .grade-item {
+        padding: 20px;
+    }
+
+    .points-guide {
+        padding: 20px;
+    }
+
+    .hero-title {
+        font-size: 28px;
+    }
+
+    .hero-description {
+        font-size: 18px;
+    }
+
+    .today-stats {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .earning-methods {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+
+    .points-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .limit-cards {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+}
+
+@media (max-width: 640px) {
+    .hero-container {
+        padding: 0 12px;
+    }
+
+    .grade-hero {
+        padding: 48px 0;
+    }
+
+    .hero-title-wrapper {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .hero-icon {
+        font-size: 28px;
+        margin-right: 0;
+    }
+
+    .hero-title {
+        font-size: 24px;
+    }
+
+    .hero-description {
+        font-size: 16px;
+    }
+
+    .grade-info {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .grade-icon {
+        width: 64px;
+        height: 64px;
+        font-size: 32px;
+    }
+
+    .grade-title {
+        font-size: 18px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .intro-title {
+        font-size: 20px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .detail-title {
+        font-size: 14px;
+    }
+
+    .points-range {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .grade-container {
+        padding: 24px 8px;
+    }
+
+    .grade-sidebar > div,
+    .grade-item,
+    .points-guide {
+        padding: 16px;
+    }
+
+    .card-content {
+        gap: 12px;
+    }
+
+    .grade-details {
+        gap: 20px;
+    }
+
+    .total-points {
+        font-size: 28px;
+    }
+
+    .grade-name {
+        font-size: 20px;
+    }
+
+    .emoji-total {
+        font-size: 20px;
+    }
+
+    .limit-value {
+        font-size: 14px;
+    }
+}
+
+/* 호버 효과 */
+@media (hover: hover) {
+    .grade-item:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .grade-item.current:hover {
+        box-shadow: 0 8px 20px rgba(249, 115, 22, 0.25);
+    }
+
+    .grade-item.achieved:hover {
+        box-shadow: 0 4px 12px rgba(34, 197, 94, 0.25);
+    }
+}
+
+/* 애니메이션 */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.grade-item {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.grade-item:nth-child(1) { animation-delay: 0.1s; }
+.grade-item:nth-child(2) { animation-delay: 0.2s; }
+.grade-item:nth-child(3) { animation-delay: 0.3s; }
+.grade-item:nth-child(4) { animation-delay: 0.4s; }
+.grade-item:nth-child(5) { animation-delay: 0.5s; }
+
+/* 스크롤바 스타일링 */
+.grade-sidebar::-webkit-scrollbar {
+    width: 4px;
+}
+
+.grade-sidebar::-webkit-scrollbar-track {
+    background: #f1f5f9;
+}
+
+.grade-sidebar::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 2px;
+}
+
+.grade-sidebar::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}

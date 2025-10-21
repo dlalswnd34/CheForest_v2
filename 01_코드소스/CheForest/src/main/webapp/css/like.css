@@ -1,0 +1,25 @@
+.like-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+}
+
+#likeBtn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    color: #bbb; /* 기본 흰색(회색) */
+    transition: color 0.2s;
+}
+
+#likeBtn.liked {
+    color: red; /* 좋아요 시 빨간색 */
+}
+
+#likeCountText {
+    margin-top: 6px;
+    font-size: 14px;
+    color: black;
+}

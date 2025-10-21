@@ -1,0 +1,148 @@
+/* ===================== 기본 스타일 ===================== */
+body {
+  font-family: 'Gowun Dodum', sans-serif;
+  background: linear-gradient(135deg, #fff7ed, #fdf2f8);
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#page {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 20px;
+}
+
+/* ===================== 진행바 ===================== */
+#progress-bar-wrap {
+  width: 100%;
+  margin-bottom: 24px;
+}
+
+#progress-bar-bg {
+  background: #e5e7eb;
+  border-radius: 8px;
+  height: 12px;
+  width: 100%;
+  overflow: hidden;
+}
+
+#progress-bar-fill {
+  background: linear-gradient(90deg, #f97316, #ec4899);
+  height: 100%;
+  width: 0%;
+  border-radius: 8px;
+  transition: width 0.3s ease;
+}
+
+#progress-text {
+  text-align: right;
+  font-size: 14px;
+  margin-bottom: 6px;
+  color: #6b7280;
+}
+
+/* ===================== 질문 ===================== */
+#q-screen h2 {
+  margin: 10px 0;
+}
+
+#q-no {
+  font-size: 18px;
+  color: #f97316;
+}
+
+#q-text {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 8px;
+  margin-bottom: 20px;
+  color: #1f2937;
+}
+
+/* ===================== 선택지 ===================== */
+.answer-container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin-top: 24px;
+}
+
+.answer-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+}
+
+.answer-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.answer-card img {
+  width: 180px;
+  height: auto;
+  border-radius: 12px;
+}
+
+.answer-card button {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #f97316, #ec4899);
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.answer-card button:hover {
+  background: linear-gradient(135deg, #ec4899, #f97316);
+}
+
+/* ===================== 결과 화면 ===================== */
+#r-screen h1 {
+  font-size: 28px;
+  margin-bottom: 16px;
+}
+
+#r-text {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 24px;
+  color: #f97316;
+}
+
+.result-btns {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.my-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #f97316, #ec4899);
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.my-btn:hover {
+  background: linear-gradient(135deg, #ec4899, #f97316);
+}

@@ -1,0 +1,177 @@
+.current-time {
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;
+}
+
+.date-line {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.iconSize1 {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+.iconSize2 {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+.stat-number2 {
+    margin-bottom: -10px;
+}
+
+.card-blue .stat-labelColor1 {
+    color: #1d4ed8;
+}
+
+.card-green .stat-labelColor1 {
+    color: #059669;
+}
+
+.card-orange .stat-labelColor1 {
+    color: #ea580c;
+}
+
+.card-pink .stat-labelColor1 {
+    color: #be185d;
+}
+
+.card-red .stat-labelColor1 {
+    color: #dc2626;
+}
+
+.card-yellow .stat-labelColor1 {
+    color: #ca8a04;
+}
+
+.card-purple .stat-labelColor1 {
+    color: #7c3aed;
+}
+
+.card-gray .stat-labelColor1 {
+    color: #4b5563;
+}
+
+.legend-dot.gray-orange {
+    background-color: #cf9664;
+}
+
+.pagination-container {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.pagination-container button {
+    margin: 0 4px;
+    padding: 6px 12px;
+    border: none;
+    background-color: #e2e8f0;
+    cursor: pointer;
+}
+
+.pagination-container button.active {
+    background-color: #f97316;
+    color: white;
+    font-weight: bold;
+}
+
+.대기중 {
+    color: #ca8a04;
+    background: #faf1c6;
+    white-space: nowrap;
+    display: inline-flex; align-items: center; gap: 4px;
+}
+.답변완료 {
+    color: #059669;
+    background-color: #dcfce7;
+    white-space: nowrap;
+    display: inline-flex; align-items: center; gap: 4px;
+}
+.online-badge{
+    color: #059669;
+    background-color: #dcfce7;
+    border-radius: 0.5rem;
+    font-size: 0.6rem;
+    padding: 0.2rem 0.3rem;
+    margin-left: 0.5rem;
+
+}
+.user-email{
+    white-space: nowrap;
+    display: inline-flex; align-items: center; gap: 4px;
+}
+.status-icon{
+    width: 12px;
+    height: 12px;
+}
+.inquiry-actions-menu {
+    position: absolute;
+    top: 32px;
+    right: 0;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    width: 160px;
+    z-index: 999;
+    padding: 0;
+    font-size: 14px;
+    overflow: visible;
+}
+
+/* 제목 영역 */
+.inquiry-actions-menu .menu-title {
+    padding: 10px 16px;
+    font-weight: bold;
+    color: #495668;
+    pointer-events: none;
+    border-bottom: 1px solid #e5e7eb; /* 회색 줄 */
+}
+
+/* 메뉴 항목 */
+.inquiry-actions-menu .menu-item {
+    padding: 10px 16px;
+    cursor: pointer;
+    transition: background 0.2s;
+    border-bottom: 1px solid #e5e7eb; /* 항목 사이 구분선 */
+}
+
+/* 마지막 항목은 border 제거 */
+.inquiry-actions-menu .menu-item:last-child {
+    border-bottom: none;
+}
+
+.inquiry-actions-menu .menu-item:hover {
+    background: #f1f5f9;
+}
+
+.inquiry-actions-menu .menu-item.delete {
+    color: #ef4444;
+}
+.loading-spinner {
+    border: 2px solid #e5e7eb; /* 회색 배경 */
+    border-top: 2px solid #3b82f6; /* 파란 회전 */
+    border-radius: 50%;
+    width: 14px;
+    height: 14px;
+    animation: spin 0.6s linear infinite;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.table-container .pagination-container{
+    margin-top: 100px; margin-bottom: 10px;
+}
+
+
+
