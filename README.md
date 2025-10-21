@@ -49,8 +49,9 @@ sudo docker start oracle-xe
 cd /home/ubuntu
 nohup sudo java -jar cheforest.war > cheforest.log 2>&1 &
 tail -f cheforest.log
-
  
+---
+
 ## 팀원 구성
 - 총 6인 참여  
 - 기획, 백엔드, 프론트엔드, DB 설계, 디자인 등 역할을 분담하여 협업 
