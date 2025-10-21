@@ -38,7 +38,7 @@
 
 ---
 
-## 🚀 배포 스크립트
+## 🚀 AWS 배포 스크립트
 ```bash
 cd C:\work\cheforest
 ssh -i "cheforest-key.pem" ubuntu@3.35.9.81
